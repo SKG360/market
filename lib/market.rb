@@ -16,7 +16,7 @@ class Market
 
   def vendors_that_sell(peaches)
     peach_vendors = @vendors.map do |vendor|
-      vendor.inventory.each_with_index(peaches)
+      vendor.inventory.keep_if(peaches)
       # binding.pry
     end
     peach_vendors
@@ -27,6 +27,9 @@ class Market
   end
 
   def sorted_item_list
-    
+    sorted_items = @vendors.keep_if do |vendor|
+      vendor.inventory
+      binding.pry
+    end
   end
 end

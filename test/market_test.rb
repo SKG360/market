@@ -65,7 +65,7 @@ class MarketTest < Minitest::Test
   end
 
   def test_for_peach_sellers
-    skip
+
     market = Market.new("South Pearl Street Farmers Market")
 
     vendor_1 = Vendor.new("Rocky Mountain Fresh")
@@ -105,7 +105,7 @@ class MarketTest < Minitest::Test
     market.add_vendor(vendor_2)
     market.add_vendor(vendor_3)
 
-    assert_equal ["Banana Nice Cream", "Peach-Raspberry Nice Cream", "Peaches", "Tomatoes"], market.vendors_that_sell("Peaches")
+    assert_equal ["Banana Nice Cream", "Peach-Raspberry Nice Cream", "Peaches", "Tomatoes"], market.sorted_item_list
   end
 
 end
